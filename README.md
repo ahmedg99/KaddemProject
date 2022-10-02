@@ -1,13 +1,13 @@
 #  Projet académique : TP "Projet Kaddem" 
  
-##• « Kaddem » , c’est quoi?: 
+## « Kaddem » , c’est quoi?: 
 C’est un projet qui vise à encourager les jeunes étudiants
 à améliorer leurs compétences professionnelles notamment dans le cadre des
 nouvelles tendances du monde de l’informatique.
-##• Objectif:
+## Objectif:
 Dans le but de préparer les étudiants aux nouvelles exigences du marché
 d’emploi, nous proposons de travailler sur le projet « KADDEM ».
-##• Donc concrètement, qu’est-ce-qu’on veut faire?
+## Donc concrètement, qu’est-ce-qu’on veut faire?
 - On désire créer une application de gestion des contrats d’étudiants dans le cadre
 du projet « Kaddem ». 
 - Ce projet définit dans chaque département des universités adhérentes un
