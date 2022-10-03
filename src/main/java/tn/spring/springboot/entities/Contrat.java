@@ -1,15 +1,17 @@
 package tn.spring.springboot.entities;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Data
+@NoArgsConstructor /*   génère un constructeur vide */
+@AllArgsConstructor /*   genere un constrcuteur avec tout les attruibiute */
+//@RequiredArgsConstructor  /*   genere un constructor avec tout les attributs   non null */
+@ToString
+@EqualsAndHashCode
 public class Contrat implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -23,45 +25,13 @@ public class Contrat implements Serializable {
     private boolean archive ;
     private int montantContrat ;
 
+    @ManyToOne
+    private Etudiant etudiant ;
 
 
 
 
 
-    public Long getIdContrat() {
-        return idContrat;
-    }
 
-    public void setId(Long id) {
-        this.idContrat = id;
-    }
 
-    public void setIdContrat(Long idContrat) {
-        this.idContrat = idContrat;
-    }
-
-    public void setDateDebutContrat(Date dateDebutContrat) {
-        this.dateDebutContrat = dateDebutContrat;
-    }
-
-    public void setFinContrat(Date finContrat) {
-        FinContrat = finContrat;
-    }
-
-    public void setSpecialite(Specialite specialite) {
-        this.specialite = specialite;
-    }
-
-    public void setArchive(boolean archive) {
-        this.archive = archive;
-    }
-
-    public void setMontantContrat(int montantContrat) {
-        this.montantContrat = montantContrat;
-    }
-
-    @Id
-    public Long getId() {
-        return idContrat;
-    }
 }

@@ -1,14 +1,16 @@
 package tn.spring.springboot.entities;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
-@Data
+ @AllArgsConstructor /*   genere un constrcuteur avec tout les attruibiute */
+@RequiredArgsConstructor  /*   genere un constructor avec tout les attributs   non null */
+@ToString
+@EqualsAndHashCode
 @Table( name ="Etudiant")
 public class Etudiant implements Serializable {
     @Id
@@ -22,15 +24,14 @@ public class Etudiant implements Serializable {
     private Option opt ;
 
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="etudiant")
+    private Set<Contrat> contrats ;
+    @ManyToMany
+    private Set<Equipe> equipes ;
 
-    public Etudiant() {
-    }
-    public Option getOption() {
-        return opt ;
-    }
-    public String getNomE() {
-        return nomE;
-    }
+    @ManyToOne
+    private Departement departements ;
+
 
 
 

@@ -1,27 +1,28 @@
 package tn.spring.springboot.entities;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-@Data
+@NoArgsConstructor /*   génère un constructeur vide */
+@AllArgsConstructor /*   genere un constrcuteur avec tout les attruibiute */
+//@RequiredArgsConstructor  /*   genere un constructor avec tout les attributs   non null */
+@ToString
+@EqualsAndHashCode
 public class DetailEquipe {
 
-    @Getter @Setter
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name="idDetailEquipe")
+@Getter
+@Setter
     private Long idDetailEquipe;
     private int salle ;
     private String thematique ;
 
-    public void setIdDetailEquipe(Long idDetailEquipe) {
-        this.idDetailEquipe = idDetailEquipe;
-    }
+    @OneToOne
+    private Equipe Equipe ;
 
-    @Id
-    public Long getIdDetailEquipe() {
-        return idDetailEquipe;
-    }
+
 }
