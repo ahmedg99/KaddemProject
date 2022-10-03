@@ -1,14 +1,20 @@
 package tn.spring.springboot.entities;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
+@Data
 public class Contrat implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name ="idContrat")
+    @Getter @Setter
     private Long idContrat;
     private Date dateDebutContrat ;
     private Date FinContrat ;
@@ -18,25 +24,9 @@ public class Contrat implements Serializable {
     private int montantContrat ;
 
 
-    public Date getDateDebutContrat() {
-        return dateDebutContrat;
-    }
 
-    public Date getFinContrat() {
-        return FinContrat;
-    }
 
-    public Specialite getSpecialite() {
-        return specialite;
-    }
 
-    public boolean isArchive() {
-        return archive;
-    }
-
-    public int getMontantContrat() {
-        return montantContrat;
-    }
 
     public Long getIdContrat() {
         return idContrat;

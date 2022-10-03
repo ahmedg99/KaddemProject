@@ -1,13 +1,20 @@
 package tn.spring.springboot.entities;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Data
 @Table( name ="Etudiant")
 public class Etudiant implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @Column(name="idEtudiant")
+    @Getter @Setter
     private Long idEtudiant; // Clé primaire
     private String prenomE;
     private String nomE;
@@ -25,24 +32,6 @@ public class Etudiant implements Serializable {
         return nomE;
     }
 
-    public void setNomE(String nomE) {
-        this.nomE = nomE;
-    }
 
-    public String getPrenomE() {
-        return prenomE;
-    }
-
-    public void setPrenomE(String prenomE) {
-        this.prenomE = prenomE;
-    }
-
-    public Long getIdEtudiant() {
-        return idEtudiant;
-    }
-
-    public void setIdEtudiant(Long idEtudiant) {
-        this.idEtudiant = idEtudiant;
-    }
 
 }

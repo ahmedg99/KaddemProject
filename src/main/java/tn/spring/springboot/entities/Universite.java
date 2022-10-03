@@ -1,10 +1,17 @@
 package tn.spring.springboot.entities;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+@Data
 public class Universite {
+    @Getter
+    @Setter
 
     private Long idUniv;
     private String nomUniv ;
@@ -20,11 +27,5 @@ public class Universite {
     }
 
 
-    public String getNomUniv() {
-        return nomUniv;
-    }
 
-    public void setNomUniv(String nomUniv) {
-        this.nomUniv = nomUniv;
-    }
 }
