@@ -2,8 +2,10 @@ package tn.spring.springboot.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import tn.spring.springboot.entities.Contrat;
 import tn.spring.springboot.entities.Etudiant;
-@Repository
-public interface EtudiantRepository  extends JpaRepository<Etudiant , Long > {
 
+@Repository
+public interface ContratRepository  extends JpaRepository<Contrat, Long > {
+    Contrat findByIdContrat(Long id ) ;
 }

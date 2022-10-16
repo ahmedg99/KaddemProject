@@ -1,10 +1,11 @@
 package tn.spring.springboot.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
-import tn.spring.springboot.Services.IEtudiantService;
+import tn.spring.springboot.Services.Interfaces.IEtudiantService;
 import tn.spring.springboot.entities.Etudiant;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/EtudiantController")
@@ -21,6 +22,11 @@ public class EtudiantController {
     public void addEtudiant(@RequestBody Etudiant etudiant) {
         etudiantService.AjouterEtudiant(etudiant);
 
+    }
+    @GetMapping(value = "/etudiants")
+    @ResponseBody
+    public List<Etudiant> getAllEtudiants() {
+        return etudiantService.getAllEtudiant() ;
     }
 
 

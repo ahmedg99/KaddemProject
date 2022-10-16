@@ -7,15 +7,13 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
- @AllArgsConstructor /*   genere un constrcuteur avec tout les attruibiute */
-@RequiredArgsConstructor  /*   genere un constructor avec tout les attributs   non null */
+ //@AllArgsConstructor /*   genere un constrcuteur avec tout les attruibiute */
+//@RequiredArgsConstructor  /*   genere un constructor avec tout les attributs   non null */
 @ToString
-@EqualsAndHashCode
-@Table( name ="Etudiant")
-public class Etudiant implements Serializable {
+@Data
+ public class Etudiant implements Serializable {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    @Column(name="idEtudiant")
     @Getter @Setter
     private Long idEtudiant; // Clé primaire
     private String prenomE;
