@@ -3,24 +3,24 @@ package tn.spring.springboot.entities;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class Universite {
+public class Universite  implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idUniv")
-     private Long idUniv;
-    private String nomUniv ;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+      private Long id_univ;
+    private String nom_univ ;
 
 
 
     public Long getIdUniv() {
-        return idUniv;
+        return id_univ;
     }
 
     public String getNomUniv() {
-        return nomUniv;
+        return nom_univ;
     }
 
     public Set<Departement> getDepartements() {
@@ -29,11 +29,11 @@ public class Universite {
 
 
     public void setIdUniv(Long idUniv) {
-        this.idUniv = idUniv;
+        this.id_univ = idUniv;
     }
 
     public void setNomUniv(String nomUniv) {
-        this.nomUniv = nomUniv;
+        this.nom_univ = nomUniv;
     }
 
     public void setDepartements(Set<Departement> departements) {
@@ -44,8 +44,7 @@ public class Universite {
     @Override
     public String toString() {
         return "Universite{" +
-                "idUniv=" + idUniv +
-                ", nomUniv='" + nomUniv + '\'' +
+                ", nomUniv='" + nom_univ + '\'' +
                 ", departements=" + departements +
                 '}';
     }
