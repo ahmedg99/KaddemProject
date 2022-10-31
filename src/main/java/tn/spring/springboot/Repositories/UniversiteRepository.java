@@ -8,6 +8,8 @@ import tn.spring.springboot.entities.Universite;
 import java.util.List;
 
 public interface UniversiteRepository extends JpaRepository<Universite,Long> {
-    Universite  findById_univ(Long id) ;
-    List<Universite>  findAllByDepartements(Departement d) ;
+    //Universite  findById_univ(Long id) ;
+    //List<Universite>  findAllByDepartements(Departement d) ;
+
+
 }

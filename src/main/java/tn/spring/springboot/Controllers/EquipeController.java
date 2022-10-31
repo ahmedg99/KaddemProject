@@ -39,4 +39,15 @@ public class EquipeController {
         return   equipeService.getAllEquipe();
     }
 
+
+
+
+
+    @GetMapping(value = "/retrieveById/{id}")
+    @ResponseBody
+    public Equipe  getAllEquipes(@PathVariable("id") Long id) {
+        return   equipeService.getEquipeById(id);
+    }
+
+
 }

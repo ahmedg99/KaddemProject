@@ -35,4 +35,9 @@ public class EquipeServiceImp implements IEquipeService {
     public List<Equipe> getAllEquipe() {
         return equipeRespository.findAll();
     }
+
+    @Override
+    public Equipe getEquipeById(Long id) {
+        return equipeRespository.findByIdEquipe(id);
+    }
 }

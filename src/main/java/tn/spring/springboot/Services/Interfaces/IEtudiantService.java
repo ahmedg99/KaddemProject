@@ -7,4 +7,7 @@ import java.util.List;
 public interface IEtudiantService {
     public Long AjouterEtudiant(Etudiant E) ;
     public List<Etudiant> getAllEtudiant() ;
+
+    Boolean deleteEtudiant(Long id);
+    Boolean update(Etudiant E);
 }

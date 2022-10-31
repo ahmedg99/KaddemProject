@@ -29,6 +29,19 @@ public class EtudiantController {
         return etudiantService.getAllEtudiant() ;
     }
 
+    @DeleteMapping(value = "/delete/{id}")
+    @ResponseBody
+    public Boolean delete(@PathVariable("id") Long id ) {
+        return etudiantService.deleteEtudiant( id );
+    }
+
+
+    @PutMapping(value = "/update")
+    @ResponseBody
+    public void update(@RequestBody Etudiant etudiant ) {
+         etudiantService.update(etudiant) ;
+     }
+
 
 
 }

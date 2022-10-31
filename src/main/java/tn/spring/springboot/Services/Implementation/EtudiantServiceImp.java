@@ -8,6 +8,7 @@ import tn.spring.springboot.Services.Interfaces.IEtudiantService;
 import tn.spring.springboot.entities.Etudiant;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -26,5 +27,19 @@ public class EtudiantServiceImp  implements IEtudiantService {
 
      public List<Etudiant> getAllEtudiant() {
         return etudiantRepository.findAll();
+    }
+
+    @Override
+    public Boolean deleteEtudiant(Long id) {
+        etudiantRepository.deleteById(id);
+        return true ;
+    }
+
+
+
+
+    public Boolean update(Etudiant E ) {
+         etudiantRepository.save(E) ;
+        return true ;
     }
 }

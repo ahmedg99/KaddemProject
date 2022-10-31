@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface DepartementRepository extends JpaRepository<Departement,Long> {
-    Departement findAllByIdDepartement(Long id ) ;
-    List<Departement>  findDepartementByEtudiantsExists(Etudiant E) ;
+    //Departement findAllByIdDepartement(Long id ) ;
+   // List<Departement>  findDepartementByEtudiantsExists(Etudiant E) ;
 }
 

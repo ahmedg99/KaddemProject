@@ -7,4 +7,5 @@ import java.util.List;
 public interface IEquipeService {
     public Long AjouterEquipe(Equipe E) ;
     public List<Equipe> getAllEquipe() ;
+    public Equipe getEquipeById(Long id ) ;
 }

@@ -9,6 +9,6 @@ import tn.spring.springboot.entities.Etudiant;
 import java.util.List;
 
 public interface DetailEquipeRepository extends JpaRepository<DetailEquipe,Long> {
-    DetailEquipe  findByIdDetailEquipe(Long id ) ;
-     List<DetailEquipe> findByIdDetailEquipeAndAndEquipe(Long id , Equipe e ) ;
+   // DetailEquipe  findByIdDetailEquipe(Long id ) ;
+     //List<DetailEquipe> findByIdDetailEquipeAndAndEquipe(Long id , Equipe e ) ;
 }
