@@ -4,16 +4,23 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.spring.springboot.Repositories.DepartementRepository;
+import tn.spring.springboot.Repositories.UniversiteRepository;
 import tn.spring.springboot.Services.Interfaces.IDepartement;
 import tn.spring.springboot.entities.Departement;
+import tn.spring.springboot.entities.Universite;
 
 import java.util.List;
+import java.util.Set;
+
 @Service
 @Slf4j
 public class DepartementService implements IDepartement {
 
-@Autowired
+    @Autowired
     DepartementRepository departementRepository ;
+    @Autowired
+    UniversiteRepository universiteRepository ;
+
 
 
     @Override
@@ -28,6 +35,8 @@ public class DepartementService implements IDepartement {
     public List<Departement> getAllD() {
         return departementRepository.findAll();
     }
+
+
 
 
 }

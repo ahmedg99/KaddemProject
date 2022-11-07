@@ -39,9 +39,15 @@ public class EtudiantController {
     @PutMapping(value = "/update")
     @ResponseBody
     public void update(@RequestBody Etudiant etudiant ) {
-         etudiantService.update(etudiant) ;
-     }
+        etudiantService.update(etudiant) ;
+    }
 
+
+    @PutMapping(value = "/affecteretudtodepart/{etudiantId}/{departmentId}")
+    @ResponseBody
+    public void affecteretudtodepart(@PathVariable("etudiantId") Long etudiantId ,@PathVariable("departmentId") Long departmentId ) {
+        etudiantService.assignEtudiantToDepartment(etudiantId,departmentId);
+    }
 
 
 }

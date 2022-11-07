@@ -2,6 +2,7 @@ package tn.spring.springboot.Services.Implementation;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import tn.spring.springboot.Repositories.ContratRepository;
 import tn.spring.springboot.Services.Interfaces.IServiceContrat;
@@ -39,6 +40,23 @@ public class ContratServiceImp implements IServiceContrat {
         }
         return "Contrat not founded " ;
      }
+
+
+
+    //@Scheduled(cron = "0 0 13 * * *")
+     //@Scheduled(fixedRate = 1000)
+    @Override
+    public void updateStatusContrat() {
+       // System.out.println("aslema");
+         List<Contrat> l = contratRepository.findAll() ;
+
+         l.stream().forEach(e-> {
+             System.out.println(e.getFinContrat());
+         });
+
+
+
+    }
 
 
 /*

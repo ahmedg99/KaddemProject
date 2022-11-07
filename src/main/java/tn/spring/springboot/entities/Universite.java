@@ -52,4 +52,19 @@ public class Universite  implements Serializable {
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Departement> departements ;
 
+    public Long getId_univ() {
+        return id_univ;
+    }
+
+    public void setId_univ(Long id_univ) {
+        this.id_univ = id_univ;
+    }
+
+    public String getNom_univ() {
+        return nom_univ;
+    }
+
+    public void setNom_univ(String nom_univ) {
+        this.nom_univ = nom_univ;
+    }
 }

@@ -8,4 +8,4 @@ import java.util.List;
 public interface IDepartement {
     public Long AjouterDepartement(Departement D) ;
     public List<Departement> getAllD();
-}
+ }

@@ -31,6 +31,10 @@ public class UniversiteController {
     }
 
 
-
+    @PutMapping(value = "/univtodepar/{idUniversite}/{idDepartement}")
+    @ResponseBody
+    public void univtodepar(@PathVariable("idUniversite") Long idUniversite ,@PathVariable("idDepartement") Long idDepartement ) {
+        iUniversity.assignUniversiteToDepartement(idUniversite,idDepartement);
+    }
 
 }

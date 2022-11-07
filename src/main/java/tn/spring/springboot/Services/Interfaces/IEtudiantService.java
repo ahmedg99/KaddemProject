@@ -10,4 +10,9 @@ public interface IEtudiantService {
 
     Boolean deleteEtudiant(Long id);
     Boolean update(Etudiant E);
+
+    public void assignEtudiantToDepartment(Long etudiantId ,Long departmentId) ;
+    public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Long idContrat,Long idEquipe);
+    List<Etudiant> getEtudiantsByDepartement (Long idDepartement);
+
 }

@@ -9,4 +9,5 @@ public interface IUniversity {
     public Long AjoutUniversity(Universite C);
     public List<Universite> getAllUniversities() ;
 
+    void assignUniversiteToDepartement(Long idUniversite, Long idDepartement);
 }
