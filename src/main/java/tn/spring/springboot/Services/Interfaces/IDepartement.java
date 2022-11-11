@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface IDepartement {
     public Long AjouterDepartement(Departement D) ;
-    public List<Departement> getAllD();
+    public List<Departement> getAllByUniveristyId(Long idUniv);
+    public List<Departement> getAllD() ;
  }

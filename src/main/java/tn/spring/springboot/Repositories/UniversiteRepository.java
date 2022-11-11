@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.Set;
 
 public interface UniversiteRepository extends JpaRepository<Universite,Long> {
+
+
     //Universite  findById_univ(Long id) ;
-    //List<Universite>  findAllByDepartements(Departement d) ;
+       //public List<Departement>  findUniversitesByDepartementsAndAnd (Long id ) ;
 
 }

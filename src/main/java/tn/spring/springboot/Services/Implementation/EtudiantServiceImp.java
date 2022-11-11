@@ -72,18 +72,21 @@ public class EtudiantServiceImp  implements IEtudiantService {
     public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Long idContrat, Long idEquipe) {
         Contrat contrat = contratRepository.findById(idContrat).orElse(null) ;
         Equipe equipe = equipeRespository.findById(idEquipe).orElse(null) ;
-            equipe.getEtudiants().add(e);
-            contrat.setEtudiant(e);
-            contratRepository.save(contrat) ;
-            equipeRespository.save(equipe);
+             e.getContrats().add(contrat);
+             e.getEquipes().add(equipe);
+              etudiantRepository.save(e);
+
         return e ;
 
     }
 
     @Override
     public List<Etudiant> getEtudiantsByDepartement(Long idDepartement) {
-        return null;
+         return etudiantRepository.findAllByDepartements_IdDepartement(idDepartement)
+                ;
     }
+
+
 
 
 }

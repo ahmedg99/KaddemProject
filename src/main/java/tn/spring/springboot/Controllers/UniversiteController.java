@@ -3,6 +3,7 @@ package tn.spring.springboot.Controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.spring.springboot.Services.Interfaces.IUniversity;
+import tn.spring.springboot.entities.Departement;
 import tn.spring.springboot.entities.Equipe;
 import tn.spring.springboot.entities.Universite;
 
@@ -36,5 +37,12 @@ public class UniversiteController {
     public void univtodepar(@PathVariable("idUniversite") Long idUniversite ,@PathVariable("idDepartement") Long idDepartement ) {
         iUniversity.assignUniversiteToDepartement(idUniversite,idDepartement);
     }
+/*
+    @GetMapping(value = "/getdepartbyunivid/{idUniversite}")
+    @ResponseBody
+    public List<Departement> getAlldepartbyunivid(@PathVariable("idUniversite") Long idUniversite) {
+        return iUniversity.retrieveDepartementsByUniversite(idUniversite);
+    }
+*/
 
 }

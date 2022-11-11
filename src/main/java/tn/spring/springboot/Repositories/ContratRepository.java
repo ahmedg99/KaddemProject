@@ -12,4 +12,5 @@ import java.util.List;
 public interface ContratRepository  extends JpaRepository<Contrat, Long > {
     Contrat findByIdContrat(Long id ) ;
      List<Contrat> findContratByArchive(String a ) ;
+    //Contrat affectContratToEtudiant (Long idContrat, String nomE, String prenomE);
 }

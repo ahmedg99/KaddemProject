@@ -50,4 +50,20 @@ public class EtudiantController {
     }
 
 
+    @PutMapping(value = "/addAndAssignEtudiantToEquipeAndContract/{idContrat}/{idequipe}")
+    @ResponseBody
+    public void addAndAssignEtudiantToEquipeAndContract(@RequestBody Etudiant etudiant, @PathVariable("idContrat")Long idContrat ,@PathVariable("idequipe") Long idequipe ) {
+        etudiantService.addAndAssignEtudiantToEquipeAndContract(etudiant,idContrat,idequipe);
+    }
+
+
+
+    @GetMapping(value = "/etudiants/departments/{departmentId}")
+    @ResponseBody
+    public List<Etudiant> getAllEtudiantsbyDepartmentId(@PathVariable("departmentId")Long departmentId) {
+        return etudiantService.getEtudiantsByDepartement(departmentId) ;
+    }
+
+
+
 }

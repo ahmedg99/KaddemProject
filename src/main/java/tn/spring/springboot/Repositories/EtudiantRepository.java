@@ -11,5 +11,6 @@ import java.util.List;
 @Repository
 public interface EtudiantRepository  extends JpaRepository<Etudiant , Long > {
     Etudiant  findAllByIdEtudiant(Long id) ;
-    List<Etudiant>  findAllByContrats(Contrat contrat) ;
+    List<Etudiant> findAllByDepartements_IdDepartement(Long departmentid) ;
+
 }

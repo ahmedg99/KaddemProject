@@ -10,7 +10,6 @@ import tn.spring.springboot.entities.Departement;
 import tn.spring.springboot.entities.Universite;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
 @Slf4j
@@ -32,11 +31,19 @@ public class DepartementService implements IDepartement {
      }
 
     @Override
+    public List<Departement> getAllByUniveristyId(Long idUniv) {
+        Universite universite = universiteRepository.findById(idUniv).orElse(null);
+        List<Departement> l = null;
+        assert false;
+        boolean b = l.addAll(universite.getDepartements());
+
+        return  l  ;
+    }
+
+    @Override
     public List<Departement> getAllD() {
         return departementRepository.findAll();
     }
-
-
 
 
 }
