@@ -23,9 +23,9 @@ import java.util.Set;
     private Option opt ;
 
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="etudiant")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="etudiant",fetch = FetchType.EAGER)
     private Set<Contrat> contrats ;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     private Set<Equipe> equipes ;
 
     @ManyToOne

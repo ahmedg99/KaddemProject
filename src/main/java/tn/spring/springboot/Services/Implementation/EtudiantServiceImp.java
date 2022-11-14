@@ -3,6 +3,7 @@ package tn.spring.springboot.Services.Implementation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tn.spring.springboot.Repositories.ContratRepository;
 import tn.spring.springboot.Repositories.DepartementRepository;
 import tn.spring.springboot.Repositories.EquipeRespository;
@@ -68,14 +69,16 @@ public class EtudiantServiceImp  implements IEtudiantService {
 
     }
 
-    @Override
+    @Transactional
     public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Long idContrat, Long idEquipe) {
         Contrat contrat = contratRepository.findById(idContrat).get();
         Equipe equipe = equipeRespository.findById(idEquipe).get();
              e.getContrats().add(contrat);
              e.getEquipes().add(equipe);
-             contrat.setEtudiant(e);
+            // contrat.setEtudiant(e);
               etudiantRepository.save(e);
+              //etudiantRepository.save(contrat);
+              System.out.println(e.getContrats());
 
         return e ;
 

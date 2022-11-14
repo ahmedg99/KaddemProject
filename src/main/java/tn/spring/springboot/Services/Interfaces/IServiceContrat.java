@@ -2,6 +2,7 @@ package tn.spring.springboot.Services.Interfaces;
 
 import tn.spring.springboot.entities.Contrat;
 
+import java.util.Date;
 import java.util.List;
 
 public interface IServiceContrat {
@@ -10,6 +11,7 @@ public interface IServiceContrat {
     public String deleteContrat(Contrat C) ;
     // public String updateContrat(Contrat C) ;
     public void updateStatusContrat() ;
+    public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate);
 
 
 }

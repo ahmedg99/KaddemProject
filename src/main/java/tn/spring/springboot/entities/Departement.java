@@ -2,34 +2,56 @@ package tn.spring.springboot.entities;
 
 
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+
+
+
+
+
+
+
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Objects;
+import java.util.List;
 import java.util.Set;
 
+@Slf4j
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
+@Builder
+
+
 @Entity
-@ToString
-
- public class Departement  implements Serializable {
-    @Id @Getter @Setter
+public class Departement implements Serializable {
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="idDepartement")
+    private long idDepartement;
+    private String nomDepartement;
 
-    private Long idDepartement ;
-    private String nomDepartement ;
-
-
-
-
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "departements",fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<Etudiant> etudiants;
 
 
-      @OneToMany(cascade = CascadeType.ALL,mappedBy = "departements")
-    private Set<Etudiant> etudiants ;
-
-
+    @Override
+    public String toString() {
+        return "Departement{" +
+                "idDepartement=" + idDepartement +
+                ", nomDepartement='" + nomDepartement + '\'' +
+                ", etudiants=" + etudiants +
+                '}';
+    }
 }
+
+
+
+
+
+

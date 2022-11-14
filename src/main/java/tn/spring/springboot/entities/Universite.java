@@ -1,5 +1,6 @@
 package tn.spring.springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -49,7 +50,7 @@ public class Universite  implements Serializable {
                 '}';
     }
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany()
     private Set<Departement> departements ;
 
     public Long getId_univ() {

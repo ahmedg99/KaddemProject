@@ -8,6 +8,9 @@ import tn.spring.springboot.Repositories.ContratRepository;
 import tn.spring.springboot.Services.Interfaces.IServiceContrat;
 import tn.spring.springboot.entities.Contrat;
 
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -48,14 +51,21 @@ public class ContratServiceImp implements IServiceContrat {
     @Override
     public void updateStatusContrat() {
        // System.out.println("aslema");
-         List<Contrat> l = contratRepository.findAll() ;
-
-         l.stream().forEach(e-> {
-             System.out.println(e.getFinContrat());
-         });
 
 
 
+
+
+
+    }
+
+    @Override
+    public float getChiffreAffaireEntreDeuxDate(Date startDate, Date endDate) {
+                 float somme=0 ;
+                 long monthsBetween = ChronoUnit.MONTHS.between((Temporal) startDate, (Temporal) endDate) ;
+
+
+               return somme ;
     }
 
 

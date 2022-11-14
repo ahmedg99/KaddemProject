@@ -1,5 +1,6 @@
 package tn.spring.springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -84,7 +85,8 @@ public class Equipe implements Serializable {
         this.detailEquipe = detailEquipe;
     }
 
-    @ManyToMany(mappedBy = "equipes",cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "equipes",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JsonIgnore
     private Set<Etudiant> etudiants ;
 
     @OneToOne
