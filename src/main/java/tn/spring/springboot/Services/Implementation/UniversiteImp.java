@@ -38,14 +38,12 @@ public class UniversiteImp implements IUniversity {
     }
 
 
-    @Override
-    public void assignUniversiteToDepartement(Long idUniversite, Long idDepartement) {
-        Universite universite   = universiteRepository.findById(idUniversite).orElse(null);
 
-        Departement departement = departementRepository.findById(idDepartement).orElse(null);
-        System.out.println("dep : " + departement + "univer " + universite);
-        universite.getDepartements().add(departement);
-        universiteRepository.save(universite);
+    public void assignUniversiteToDepartement(Long idUniversite, Long idDepartement) {
+        Universite u   = universiteRepository.findById(idUniversite).get();
+        Departement departement = departementRepository.findById(idDepartement).get();
+         u.getDepartements().add(departement);
+        universiteRepository.save(u);
     }
 
  

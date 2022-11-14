@@ -40,7 +40,7 @@ public class EtudiantServiceImp  implements IEtudiantService {
     }
 
      public List<Etudiant> getAllEtudiant() {
-         System.out.println(etudiantRepository.findAll());
+         //System.out.println(etudiantRepository.findAll());
 
          return etudiantRepository.findAll();
     }
@@ -70,10 +70,11 @@ public class EtudiantServiceImp  implements IEtudiantService {
 
     @Override
     public Etudiant addAndAssignEtudiantToEquipeAndContract(Etudiant e, Long idContrat, Long idEquipe) {
-        Contrat contrat = contratRepository.findById(idContrat).orElse(null) ;
-        Equipe equipe = equipeRespository.findById(idEquipe).orElse(null) ;
+        Contrat contrat = contratRepository.findById(idContrat).get();
+        Equipe equipe = equipeRespository.findById(idEquipe).get();
              e.getContrats().add(contrat);
              e.getEquipes().add(equipe);
+             contrat.setEtudiant(e);
               etudiantRepository.save(e);
 
         return e ;

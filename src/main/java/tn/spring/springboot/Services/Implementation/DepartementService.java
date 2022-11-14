@@ -42,6 +42,8 @@ public class DepartementService implements IDepartement {
 
     @Override
     public List<Departement> getAllD() {
+
+
         return departementRepository.findAll();
     }
 
