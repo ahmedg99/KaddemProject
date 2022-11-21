@@ -1,5 +1,6 @@
 package tn.spring.springboot.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,7 +19,11 @@ public class Contrat implements Serializable {
     @Column(name ="idContrat")
 
     private Long idContrat;
+    @JsonFormat
+            (shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date dateDebutContrat ;
+    @JsonFormat
+            (shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date FinContrat ;
     @Enumerated(EnumType.STRING)
     private Specialite specialite ;

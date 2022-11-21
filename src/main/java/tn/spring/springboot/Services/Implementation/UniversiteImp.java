@@ -46,6 +46,12 @@ public class UniversiteImp implements IUniversity {
         universiteRepository.save(u);
     }
 
- 
+    @Override
+    public Set<Departement> getAllDepartments(Long idUniversity) {
+        Universite u = universiteRepository.findById(idUniversity).get();
+        //System.out.println(u.getDepartements());
+        return u.getDepartements();
+    }
+
 
 }

@@ -36,7 +36,7 @@ public class DepartementService implements IDepartement {
         List<Departement> l = null;
         assert false;
         boolean b = l.addAll(universite.getDepartements());
-
+        System.out.println(l);
         return  l  ;
     }
 
@@ -46,6 +46,9 @@ public class DepartementService implements IDepartement {
 
         return departementRepository.findAll();
     }
+
+
+
 
 
 }

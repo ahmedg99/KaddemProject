@@ -8,6 +8,7 @@ import tn.spring.springboot.entities.Equipe;
 import tn.spring.springboot.entities.Universite;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/University")
@@ -28,6 +29,7 @@ public class UniversiteController {
     @GetMapping(value = "/get")
     @ResponseBody
     public List<Universite> getAllUniversites() {
+         iUniversity.getAllDepartments(2L);
         return iUniversity.getAllUniversities();
     }
 
@@ -37,12 +39,12 @@ public class UniversiteController {
     public void univtodepar(@PathVariable("idUniversite") Long idUniversite ,@PathVariable("idDepartement") Long idDepartement ) {
         iUniversity.assignUniversiteToDepartement(idUniversite,idDepartement);
     }
-/*
+
     @GetMapping(value = "/getdepartbyunivid/{idUniversite}")
     @ResponseBody
-    public List<Departement> getAlldepartbyunivid(@PathVariable("idUniversite") Long idUniversite) {
-        return iUniversity.retrieveDepartementsByUniversite(idUniversite);
+    public Set<Departement> getAlldepartbyunivid(@PathVariable("idUniversite") Long idUniversite) {
+        return iUniversity.getAllDepartments(idUniversite);
     }
-*/
+
 
 }

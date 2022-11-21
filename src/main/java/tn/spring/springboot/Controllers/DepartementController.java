@@ -23,7 +23,7 @@ public class DepartementController {
     @GetMapping(value = "/get")
     @ResponseBody
     public List<Departement> getAllDE() {
-        return  DepartementService.getAllD();
+         return  DepartementService.getAllD();
     }
 
 }

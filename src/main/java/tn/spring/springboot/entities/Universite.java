@@ -53,6 +53,7 @@ public class Universite  implements Serializable {
     @OneToMany()
     private Set<Departement> departements ;
 
+
     public Long getId_univ() {
         return id_univ;
     }

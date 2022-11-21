@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import tn.spring.springboot.Repositories.ContratRepository;
+import tn.spring.springboot.Repositories.EtudiantRepository;
 import tn.spring.springboot.Services.Interfaces.IServiceContrat;
 import tn.spring.springboot.entities.Contrat;
+import tn.spring.springboot.entities.Etudiant;
 
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.Temporal;
@@ -19,6 +21,8 @@ public class ContratServiceImp implements IServiceContrat {
 
     @Autowired
     ContratRepository contratRepository ;
+    @Autowired
+    EtudiantRepository etudiantRepository;
 
 
 
@@ -68,6 +72,28 @@ public class ContratServiceImp implements IServiceContrat {
                return somme ;
     }
 
+
+
+    @Override
+    public Contrat affectContratToEtudiant(Contrat ce, String nomE, String prenomE) {
+        Etudiant  etudiant = etudiantRepository.findByNomEAndPrenomE(nomE,prenomE);
+        int sommeContratActive = 0;
+        sommeContratActive = (int) etudiant.getContrats().stream().filter(c->c.isArchive()).count();
+        if(sommeContratActive <5) {
+            ce.setEtudiant(etudiant);
+            contratRepository.save(ce);
+        }
+        return contratRepository.save(ce);
+    }
+
+
+    @Override
+    public Integer nbContratsValides(Date startDate, Date endDate) {
+
+        List<Contrat> listeallcontrats = contratRepository.findAll();
+
+        return ( int ) listeallcontrats.stream().filter(c-> !c.isArchive()).count();
+    }
 
 /*
     @Override

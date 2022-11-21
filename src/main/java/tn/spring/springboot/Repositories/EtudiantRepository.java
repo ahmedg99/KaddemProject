@@ -12,5 +12,6 @@ import java.util.List;
 public interface EtudiantRepository  extends JpaRepository<Etudiant , Long > {
     Etudiant  findAllByIdEtudiant(Long id) ;
     List<Etudiant> findAllByDepartements_IdDepartement(Long departmentid) ;
+    Etudiant findByNomEAndPrenomE(String nomE,String prenomE) ;
 
 }

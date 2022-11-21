@@ -1,4 +1,5 @@
 package tn.spring.springboot.entities;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -24,6 +25,7 @@ import java.util.Set;
 
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy="etudiant",fetch = FetchType.EAGER)
+    @JsonIgnore
     private Set<Contrat> contrats ;
     @ManyToMany(fetch = FetchType.EAGER)
     private Set<Equipe> equipes ;
